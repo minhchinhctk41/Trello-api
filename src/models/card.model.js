@@ -6,7 +6,7 @@ const cardCollectionName = 'cards'
 const cardCollectionSchema = Joi.object({
   boardId: Joi.string().required(),
   columnId: Joi.string().required(),
-  title: Joi.string().required().min(3).max(20),
+  title: Joi.string().required().min(3).max(30).trim(),
   cover: Joi.string().default(null),
   createdAT: Joi.date().timestamp().default(Date.now()),
   updateAt: Joi.date().timestamp().default(null),
@@ -26,7 +26,7 @@ const createNew = async (data) => {
 
     return result.ops[0]
   } catch (error) {
-    console.log(error)
+    throw new Error(error)
   }
 }
 

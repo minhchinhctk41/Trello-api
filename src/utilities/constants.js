@@ -5,3 +5,8 @@ export const HttpStatusCode = {
   NOT_FAOND: 404,
   INTERNAL_SERVER: 500
 }
+
+export const WHITELISH_DOMAINS = [
+  'http://localhost:3000',
+  'http://localhost:3001'
+]

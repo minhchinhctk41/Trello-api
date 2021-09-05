@@ -8,5 +8,5 @@ export const HttpStatusCode = {
 
 export const WHITELISH_DOMAINS = [
   'http://localhost:3000',
-  'http://localhost:3001'
+  'https://trello-7ef9c.web.app'
 ]

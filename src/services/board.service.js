@@ -36,7 +36,26 @@ const getFullBoard = async (boardId) => {
   }
 }
 
+const update = async (id, data) => {
+  try {
+    const updateData = {
+      ...data,
+      updateData: Date.now()
+    }
+    if (updateData._id) delete updateData._id
+    if (updateData.columns) delete updateData.columns
+    if (updateData.updateData) delete updateData.updateData
+
+    const updatedBoard = await BoardModel.update(id, updateData)
+
+    return updatedBoard
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
 export const BoardService = {
   createNew,
-  getFullBoard
+  getFullBoard,
+  update
 }
